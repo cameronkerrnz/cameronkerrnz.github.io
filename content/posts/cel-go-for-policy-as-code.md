@@ -1,5 +1,5 @@
 +++ 
-draft = true
+draft = false
 date = 2023-08-15T23:21:07+12:00
 title = "Using Common Expression Language (CEL) in... a Metrics Exporter for LDAP"
 description = "An Example of using the Common Expression Language"
