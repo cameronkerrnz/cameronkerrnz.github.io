@@ -1,5 +1,5 @@
 +++ 
-draft = true
+draft = false
 date = 2023-08-15T21:54:45+12:00
 title = "Reimplementation of Learning :: a Python to Go Retrospective"
 description = "Encouraging System Admins / Engineers to Improve their Programming"
@@ -13,11 +13,11 @@ series = []
 
 > This post was previously drafted for the [Pythian blog](https://blog.pythian.com/).
 
-I love learning and creative problem solving; I consider these primary traits for success as an SRE and many other parts of the IT industry. As an SRE, distinct from other roles with ‘Developer’ in their job title, most of the programming I have done can be considered tooling and integration. This is great if you consider yourself a ‘polyglot’ programmer (someone who will use/learn many languages).
-
 This post is written for those engineers who are rising to the challenge of being an SRE, to inspire you and to give you confidence to try out new ways of solving problems. In my experience it is relatively easy to find Systems Engineer / Systems Administrator etc. with some skill in Python. Python is a wonderful language which I’ve made a lot of use of in the past.
 
-In this post, I hope to inspire you to try using Go for a small project, and to give you some confidence to try. However, this is not a post about programming… you won’t even see a single line of code. Hopefully you’ll come away with an understanding of why/when this can be a good idea, how much time it took, the breakdown of that time as relates to someone who is a competent programmer, but is still relatively new to Go, and the qualitative outcomes.
+I love learning and creative problem solving; I consider these primary traits for success as an SRE and many other parts of the IT industry. As an SRE, distinct from other roles with ‘Developer’ in their job title, most of the programming I have done can be considered tooling and integration. This is great if you consider yourself a ‘polyglot’ programmer (someone who will use/learn many languages).
+
+In this post, I hope to inspire you to try using Go for a small project, to give you some confidence to try, and perhaps even set some expectations. However, this is not a post about programming… you won’t even see a single line of code. Hopefully you’ll come away with an understanding of why/when this can be a good idea, how much time it took, the breakdown of that time as relates to someone who is a competent programmer, but is still relatively new to Go, and the qualitative outcomes.
 
 There are actually two small related projects I want to discuss here, but before I introduce them I should give you some context so you can appreciate the problems they are trying to solve, and thus the value they might provide.
 
