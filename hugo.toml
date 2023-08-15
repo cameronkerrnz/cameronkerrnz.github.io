@@ -9,7 +9,7 @@ theme = 'hugo-coder'
   description = "Cameron Kerr's personal website"
   keywords = "blog,developer,personal,linux,sre"
   avatarurl = "images/cameron-kerr-nz-logo.png"
-  since = 2000
+  since = 2023
   colorScheme = "auto"
   dateFormat = "2 January 2006"
 
