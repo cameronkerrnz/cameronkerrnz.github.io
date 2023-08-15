@@ -1,0 +1,40 @@
+baseURL = 'https://cameronkerrnz.github.io/'
+languageCode = 'en-us'
+title = 'Cameron Kerr :: Blog'
+theme = 'hugo-coder'
+
+[params]
+  authors = "Cameron Kerr"
+  info = "Linux SRE and Polyglot Programmer"
+  description = "Cameron Kerr's personal website"
+  keywords = "blog,developer,personal,linux,sre"
+  avatarurl = "images/cameron-kerr-nz-logo.png"
+  since = 2000
+  colorScheme = "auto"
+  dateFormat = "2 January 2006"
+
+[[params.social]]
+name = "Github"
+icon = "fa fa-2x fa-github"
+weight = 1
+url = "https://github.com/cameronkerrnz/"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "fa fa-2x fa-linkedin"
+weight = 4
+url = "https://www.linkedin.com/in/cameronkerrnz/"
+
+[[params.social]]
+name = "RSS"
+icon = "fa fa-2x fa-rss"
+weight = 6
+url = "https://cameronkerrnz.github.io/index.xml"
+rel = "alternate"
+type = "application/rss+xml"
+
+[[languages.en.menu.main]]
+name = "Blog"
+weight = 2
+url = "posts/"
+
