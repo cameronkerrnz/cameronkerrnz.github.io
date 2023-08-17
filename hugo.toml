@@ -3,8 +3,12 @@ languageCode = 'en-us'
 title = 'Cameron Kerr :: Blog'
 theme = 'hugo-coder'
 
+# Author config
+[author]
+  name = "Cameron Kerr"
+  email = "cameron.kerr.nz@gmail.com"
+
 [params]
-  authors = "Cameron Kerr"
   info = "Linux SRE and Polyglot Programmer"
   description = "Cameron Kerr's personal website"
   keywords = "blog,developer,personal,linux,sre"
@@ -33,8 +37,33 @@ url = "https://cameronkerrnz.github.io/index.xml"
 rel = "alternate"
 type = "application/rss+xml"
 
-[[languages.en.menu.main]]
-name = "Blog"
-weight = 2
-url = "posts/"
+# Menu config
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    title = ""
+  [[menu.main]]
+    weight = 2
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+#  [[menu.main]]
+#    weight = 3
+#    identifier = "categories"
+#    pre = ""
+#    post = ""
+#    name = "Categories"
+#    url = "/categories/"
+#    title = ""
 
