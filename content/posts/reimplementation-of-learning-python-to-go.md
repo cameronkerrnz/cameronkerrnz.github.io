@@ -294,5 +294,5 @@ What is worth more comparison however is the initial Python access-log parser an
 
 I want to leave you with a video I watched recently by an Engineer who has a very well presented YouTube channel. In one video he looks at the question of what an Engineer means by ‘best’. The notion of 'best' is a very relevant term here.
 
-> [The Microwave Oven Magnetron: What an Engineer Means by “Best”](https://www.youtube.com/watch?v=p8IO9u9IuOs)
+{{< youtube p8IO9u9IuOs >}}
 
