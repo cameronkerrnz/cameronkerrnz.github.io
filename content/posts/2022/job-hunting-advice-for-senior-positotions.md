@@ -1,5 +1,5 @@
 +++ 
-draft = true
+draft = false
 date = 2022-02-07
 title = "Job Hunting for Senior IT Roles"
 description = ""
