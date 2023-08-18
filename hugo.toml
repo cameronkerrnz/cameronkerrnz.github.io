@@ -10,7 +10,7 @@ theme = 'hugo-coder'
 
 [params]
   info = "Linux SRE and Polyglot Programmer"
-  description = "Cameron Kerr's personal website"
+  description = "Understanding begets Resolution"
   keywords = "blog,developer,personal,linux,sre"
   avatarurl = "images/cameron-kerr-nz-logo.png"
   since = 2023
@@ -67,3 +67,6 @@ type = "application/rss+xml"
 #    url = "/categories/"
 #    title = ""
 
+[markup]
+  [markup.highlight]
+    noClasses = true
