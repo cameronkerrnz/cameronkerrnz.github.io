@@ -15,7 +15,7 @@ theme = 'hugo-coder'
   avatarurl = "images/cameron-kerr-nz-logo.png"
   since = 2023
   colorScheme = "auto"
-  dateFormat = "2 January 2006"
+  dateFormat = "2006-01-02"
 
 [[params.social]]
 name = "Github"
