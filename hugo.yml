@@ -8,6 +8,7 @@ author:
   email: cameron.kerr.nz@gmail.com
 
 googleAnalytics: G-8V0JS24C90
+disqusShortname: cameronkerrnz-blog
 
 params:
   info: Linux SRE and Polyglot Programmer
