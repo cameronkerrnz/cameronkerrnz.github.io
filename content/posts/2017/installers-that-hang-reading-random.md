@@ -11,6 +11,8 @@ externalLink = ""
 series = []
 +++
 
+> This post was originally published at my old blog Distracted IT on Blogger.com
+
 Okay, so I'm working on making an Ansible role for deploying an Oracle 10g Webgate, and I want it working on RHEL 6 and RHEL 7. I managed to do that (yay; took a bit of persuading), but quickly noticed that if you don't do something to prevent it, the installer (InstallShield on Linux... yuck, and not just because it wraps Java 6), your entropy pool drains very very quickly and the installer just sits there, hanging.  
 
 You can verify that its blocking because of entropy by using a command such as:  
