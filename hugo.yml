@@ -92,6 +92,13 @@ menu:
       name: Posts
       url: /posts/
       title: ''
+    - weight: 2
+      identifier: archives
+      pre: '<b>'
+      post: '</b>'
+      name: Archives
+      url: /archives/
+      title: ''
     - weight: 3
       identifier: tags
       pre: ''
