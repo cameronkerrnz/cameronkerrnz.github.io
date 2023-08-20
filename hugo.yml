@@ -1,19 +1,62 @@
 baseURL: 'https://cameronkerrnz.github.io/'
 languageCode: en-us
 title: 'Cameron Kerr :: Blog'
-theme: hugo-coder
-paginate: 100
+theme: PaperMod
+paginate: 20
 author:
   name: Cameron Kerr
   email: cameron.kerr.nz@gmail.com
+
+googleAnalytics: G-8V0JS24C90
+
 params:
   info: Linux SRE and Polyglot Programmer
   description: Understanding begets Resolution
-  keywords: 'blog,developer,personal,linux,sre'
+  keywords: ["blog","developer","personal","linux","sre","programming"]
   avatarurl: images/cameron-kerr-nz-logo.png
   since: 2023
   colorScheme: auto
   dateFormat: '2006-01-02'
+
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  UseHugoToc: true
+  showtoc: true
+  tocopen: false
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "/images/favicon.ico"
+    favicon16x16: "/images/favicon-16x16.png"
+    favicon32x32: "/images/favicon-32x32.png"
+    apple_touch_icon: "/images/apple-touch-icon.png"
+    safari_pinned_tab: "/images/safari-pinned-tab.svg"
+
+  profileMode:
+    enabled: true # needs to be explicitly set
+    title: 'Cameron Kerr'
+    subtitle: "Linux SRE and Polyglot Programmer"
+    imageUrl: "/images/cameron-kerr-nz-logo.png"
+    imageWidth: 350
+    imageHeight: 350
+    imageTitle: my image
+    # buttons:
+    #   - name: Posts
+    #     url: posts
+    #   - name: Tags
+    #     url: tags
+
   social:
     - name: Github
       icon: fa fa-2x fa-github
@@ -29,6 +72,17 @@ params:
       url: 'https://cameronkerrnz.github.io/index.xml'
       rel: alternate
       type: application/rss+xml
+  
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  editPost:
+    URL: "https://github.com/cameronkerrnz.github.io/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
 menu:
   main:
     - weight: 1
@@ -38,13 +92,22 @@ menu:
       name: Posts
       url: /posts/
       title: ''
-    - weight: 2
+    - weight: 3
       identifier: tags
       pre: ''
       post: ''
       name: Tags
       url: /tags/
       title: ''
+
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
 markup:
   highlight:
-    noClasses: true
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
+
