@@ -3,6 +3,8 @@ languageCode = 'en-us'
 title = 'Cameron Kerr :: Blog'
 theme = 'hugo-coder'
 
+paginate = 100
+
 # Author config
 [author]
   name = "Cameron Kerr"
