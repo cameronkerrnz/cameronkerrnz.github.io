@@ -3,6 +3,7 @@ draft = false
 date = 2022-11-22
 title = "Amazon EFS Top-Talkers"
 description = ""
+summary = "Use Amazon's VPC flow logs (similar to NetFlow) to identify NFS clients and servers and enrich that IP-level information with useful names so you can recognise EC2 instances, EFS endpoints etc."
 slug = ""
 authors = []
 tags = ["AWS", "EFS", "NFS"]

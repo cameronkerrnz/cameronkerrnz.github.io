@@ -3,6 +3,7 @@ draft = false
 date = 2015-05-05
 title = "The importance of being liberal in a Cisco environment"
 description = ""
+summary = "Network incompatibilities do happen and sometimes you need to be a little more forgiving in order to let the traffic flow. An example of where some Cisco behaviour was running foul of Linux."
 slug = ""
 authors = []
 tags = ["IPTables","Cisco","Networking","Linux"]

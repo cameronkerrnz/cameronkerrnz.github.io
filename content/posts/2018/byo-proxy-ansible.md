@@ -3,6 +3,7 @@ draft = false
 date = 2018-01-25
 title = "Deploying with Ansible when Outgoing Access to Internet is Unavailable (BYO proxy)"
 description = ""
+summary = "Network gynmastics using SSH and a local proxy for servers that don't have internet access but still need to 'yum update' etc."
 slug = ""
 authors = []
 tags = ["Ansible", "Proxies", "SSH", "Security"]

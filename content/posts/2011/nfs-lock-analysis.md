@@ -2,6 +2,7 @@
 draft = false
 date = 2011-08-28
 title = "NFS Lock Analysis with tshark (Wireshark) and Python"
+summary = "NFS locking can impede the performance of your clustered application. Learn how to capture and analyse NFS traffic to see where your locking issues are."
 description = ""
 slug = ""
 authors = []

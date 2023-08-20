@@ -3,6 +3,7 @@ draft = false
 date = 2022-02-07
 title = "Job Hunting for Senior IT Roles"
 description = ""
+summary = "Some observations from successful job hunting for those wanting a remote role or to pivot in the industry. Meant for more senior roles, where the funnel should be smaller."
 slug = ""
 authors = []
 tags = []

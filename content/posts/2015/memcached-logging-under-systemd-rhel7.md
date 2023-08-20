@@ -3,6 +3,7 @@ draft = false
 date = 2015-08-04
 title = "Memcached logging (and others) under Systemd on RHEL7"
 description = ""
+summary = "How to cleanly gather logs for memcached."
 slug = ""
 authors = []
 tags = ["memcached","logging","systemd"]

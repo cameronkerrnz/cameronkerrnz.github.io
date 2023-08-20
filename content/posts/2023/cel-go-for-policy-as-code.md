@@ -3,6 +3,7 @@ draft = false
 date = 2023-08-15T23:21:07+12:00
 title = "Using Common Expression Language (CEL) in... a Metrics Exporter for LDAP"
 description = "An Example of using the Common Expression Language"
+summary = "Use the Common Expression Language (CEL) to allow user-friendly flexible policy rules. Show this with YAML to group/filter data to expose as metrics."
 slug = ""
 authors = ["Cameron Kerr"]
 tags = ["Programming", "Metrics", "Go"]

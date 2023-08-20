@@ -3,6 +3,7 @@ draft = false
 date = 2023-08-15T21:54:45+12:00
 title = "Reimplementation of Learning :: a Python to Go Retrospective"
 description = "Encouraging System Admins / Engineers to Improve their Programming"
+summary = "PoC coding and reimplementation of Python and Go for metrics and log parsing using an example of 389 Directory Service."
 slug = "A Python to Go Retrospective"
 authors = ["Cameron Kerr"]
 tags = ["Retrospective", "Programming", "Growth", "Python", "Go"]
@@ -55,12 +56,16 @@ I started this exploration with the access log. LDAP access logs are extremely b
 
 Other issues are that the query (LDAP filter) is not aggregatable. I’d very much like to aggregate similar queries together. This enrichment activity is something that can provide a lot of value. Example: I can’t do something like a GROUP BY with these two lines; they are different:
 
-    (&(objectClass=inetOrgPerson)(|(cn=ckerr)(uid=ckerr)(mail=ckerr))
-    (&(objectClass=inetOrgPerson)(|(cn=jsmith)(uid=jsmith)(mail=jsmith))
+```plain
+(&(objectClass=inetOrgPerson)(|(cn=ckerr)(uid=ckerr)(mail=ckerr))
+(&(objectClass=inetOrgPerson)(|(cn=jsmith)(uid=jsmith)(mail=jsmith))
+```
 
 But if I can generalize it to show the query structure and attributes (and type of indices) used, then I can certainly do a GROUP BY on this, and thus get some useful aggregate performance information:
 
-    (&(objectClass=inetOrgPerson)(|(cn=...)(uid=...)(mail=...))
+```plain
+(&(objectClass=inetOrgPerson)(|(cn=...)(uid=...)(mail=...))
+```
 
 So to get the data in a form that useful to understand the workloads, we need to do a few things with regard to the access-log:
 

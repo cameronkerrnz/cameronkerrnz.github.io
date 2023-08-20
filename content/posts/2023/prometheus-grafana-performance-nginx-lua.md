@@ -3,6 +3,7 @@ draft = false
 date = 2023-03-24
 title = "Managing the Performance of Grafana/Prometheus Dashboards using Nginx & Lua"
 description = ""
+summary = "Regain visibility into the performance of Open Source Grafana and Prometheus so you know which dashboards and visualisations are slowing down your Prometheus service."
 slug = ""
 authors = ["Cameron Kerr"]
 tags = ["Grafana", "Lua", "Nginx", "Performance", "Prometheus", "Architecture"]
@@ -15,7 +16,7 @@ series = []
 
 > The code that goes along with this post can be found at [github.com/cameronkerrnz/grafana-prometheus-nginx-lua](https://github.com/cameronkerrnz/grafana-prometheus-nginx-lua)
 
-Is your Prometheus performance causing your Grafana experience to suffer? Could you explain which of your tens of Grafana dashboards or users are causing performance problems in Prometheus? Let me show you how we unlocked insight into the performance of Grafana and Prometheus, allowing us to answer import service management questions such as:
+Is your Prometheus performance causing your Grafana experience to suffer? Could you explain which of your tens of Grafana dashboards or users are causing performance problems in Prometheus? Let me show you how I unlocked insight into the performance of Grafana and Prometheus, allowing us to answer import service management questions such as:
 
 - Which dashboards are actually being used?
 - Who is actually using the dashboards?

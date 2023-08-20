@@ -2,6 +2,7 @@
 draft = false
 date = 2011-08-28
 title = "Build an inode Lookup Database using SQLite3"
+summary = "I show a simple but effective use of SQLite3 to help me with an analysis problem."
 description = ""
 slug = ""
 authors = []

@@ -3,6 +3,7 @@ draft = false
 date = 2017-03-23
 title = "Point a single process to /dev/urandom instead of /dev/random"
 description = ""
+summary = "Giving a single process (tree) a different view of the filesystem without modifying the process; and showing how to do this manually and via Ansible."
 slug = ""
 authors = []
 tags = ["Ansible", "Performance"]

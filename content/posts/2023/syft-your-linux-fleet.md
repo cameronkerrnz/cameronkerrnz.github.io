@@ -3,6 +3,7 @@ draft = false
 date = 2023-06-19
 title = "Syft your Linux Fleet Looking for Shellshock, Log4J.... and Oracle Java?"
 description = ""
+summary = "I explore using Syft and Grype, demonstrate use of jq and Go's text templates, and explore using Syft against a server rather than a container."
 slug = ""
 authors = []
 tags = ["SBoM", "Compliance", "Security", "Syft", "Grype"]

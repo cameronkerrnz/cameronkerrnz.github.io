@@ -3,6 +3,7 @@ draft = false
 date = 2023-01-25
 title = "Map Git Dependencies using n-grams in Python"
 description = ""
+summary = "Where in Git would I go to edit the code that deploys a set of resources identified by audit findings?"
 slug = ""
 authors = []
 tags = ["AWS", "CloudFormation", "Git", "Python", "SRE"]

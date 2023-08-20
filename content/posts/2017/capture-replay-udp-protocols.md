@@ -3,6 +3,7 @@ draft = false
 date = 2017-04-25
 title = "Capturing and Replaying Connection-less Protocols (eg. IPFIX into Logstash)"
 description = ""
+summary = "Capture real-world network traffic so you can replay it later / elsewhere for development and testing. An example is given using IPFIX (AppFlow), but directly relevant to UDP Syslog too."
 slug = ""
 authors = []
 tags = ["Networking", "Linux", "Testing", "Logstash", "NetFlow", "AppFlow", "Syslog"]

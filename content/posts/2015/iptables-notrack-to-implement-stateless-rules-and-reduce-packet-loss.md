@@ -3,6 +3,7 @@ draft = false
 date = 2015-05-05
 title = "Use IPTables NOTRACK to implement stateless rules and reduce packet loss"
 description = ""
+summary = "Disabling IPTables connection tracking for DNS can resolve problems due to too many connections in the connection table."
 slug = ""
 authors = []
 tags = ["DNS", "IPTables", "Networking", "Diagnostics"]
