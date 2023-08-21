@@ -3,7 +3,7 @@ title: "Use Getent Hosts in Scripts"
 summary: "It is common practice to use tools like 'dig' to lookup DNS results, but this has very bad performance. If you just need to lookup a name or address, there's an easier, friendly way."
 date: 2015-04-15
 draft: false
-tags: ["DNS", "Programming"]
+tags: ["DNS", "Programming", "TCPdump"]
 ---
 
 Okay, so the excrement of the day is flying from the fan and you need to get some quick analytics of who/what is being the most-wanted of the day. Perhaps you don't currently have the analytics you need at your fingertips, so you hack up a huge 'one-liner' that perhaps takes a live sample of traffic (tcpdump -p -nn ...), extracts some data using sed, collates the data using awk etc. and then does some sort of reporting step. Yay, that's what we call agile analytics (see 'hyperbole'); its an all-too-common fallback methodology that does prove to be immensely useful as a first step.
