@@ -3,7 +3,7 @@ title: "(Ab)using Samba and inotify to implement simple menu of privileged actio
 date: 2014-04-29
 draft: false
 summary: "When you want SSH and sudo, but all you have is a Samba share. Similar to using a flag file in a network share to trigger some scripted action, this solution uses inotify to watch for files that get deleted, and then even shows the status of each job."
-tags: ["Automation", "Shift-Left", "Python"]
+tags: ["Automation", "Shift-Left", "Python", "Samba"]
 ---
 
 ## Part 3: Demonstration
