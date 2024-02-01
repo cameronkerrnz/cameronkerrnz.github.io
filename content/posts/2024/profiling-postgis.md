@@ -49,7 +49,7 @@ PostgreSQL comes with no profiler support for this code... tools like slow query
 
 Adding debug/info statements _can_ be useful, although it can be challenging to process, and certainly challenging to quickly enable or disable. Not something you would want to do in a production environment.
 
-It's feels a bit clunky... better as a debugging aid instead of profiling. But it can be very useful if you don't mind the resulting text-processing to process timestamps and then report on your findings, such as an application exhibiting O(N^2) time complexity.
+It's feels a bit clunky... better as a debugging aid instead of profiling. But it can be very useful if you don't mind the resulting text-processing to process timestamps and then report on your findings, such as an application exhibiting O(N<sup>2</sup>) time complexity.
 
 Debugging statements don't require any additional componentry, but will require recreating functions etc.
 
