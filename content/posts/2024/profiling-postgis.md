@@ -157,7 +157,7 @@ Tips:
 - [`\a`](https://www.postgresql.org/docs/current/app-psql.html#:~:text=If%20the%20current%20table%20output%20format%20is%20unaligned%2C%20it%20is%20switched%20to%20aligned.) and [`\x`](https://www.postgresql.org/docs/current/app-psql.html#:~:text=Sets%20or%20toggles%20expanded%20table%20formatting%20mode) are your friends if you haven't met them yet.
 - `\df postgis.st_area`  will list functions; the documentation refers to these as regular expressions, although it seems to use glob expressions.
 - `\df+` will include the comment
-- Beware some IDEs; my older version of PyCharm was giving my documentation for a different function override.
+- Beware some IDEs; my older version of PyCharm was giving me documentation for a different function override.
 - Beware 'geography' versus 'geometry' (trap for GIS newbies)
 - `\sf postgis.st_area(postgis.geometry)` will output the source code for a function. When overrides are present you will need to specify the parameter types (not including any parameter names)
 
@@ -190,10 +190,10 @@ So here's the general set of transformations:
 - Our function will exist explicitly in the `profiling` schema
 - The language will change from 'c' to 'plpgsql'
 - You'll need to give the parameters names so you can refer to them in the body.
-- I like to be explicit when creating such wrappers in this case when referring to anything in the `postgis` schema. **You MUST NOT refer to an unqualified `st_area` in this function; only `postgis.st_area`, or you will end up with unbounded recursion.
-- I like to update the function comment also... but this is optional.
+- I like to be explicit when creating such wrappers in this case when referring to anything in the `postgis` schema. **You MUST NOT refer to an unqualified `st_area` in this function; only `postgis.st_area`, or you will end up with unbounded recursion**.
+- I like to update the function comment to include a `[PROFILING]` label... but this is optional.
 - Don't forget the ownership statement.
-- The body of the function will be replaced.
+- The body of the function will be replaced with a single RETURN statement pointing to the function in the `postgis` schema.
 
 Here's my wrapper for `st_area`
 
@@ -244,3 +244,5 @@ I love good visibility, don't you?
 - You could also do this in a Production environment if you were suitably desperate, but you should probably avoid using 'monitor' mode and instead use the 'run' mode to reduce the scope of what you are measuring.
 - It would be super if PostGIS (or some other tooling) could provide a ready-made set of wrappers for this purpose.
 - Individual call-sites (eg. multiple calls to st_difference in the same function) become tangled, but we can overcome that with call-site specific wrappers.
+- This will also work if you installed PostGIS into the `public` schema rather than into it's own schema; just be sure to place the `profiling` schema before the `public` schema in that case.
+
