@@ -2,7 +2,7 @@
 title: "3d Print and Paint Ocarina"
 date: 2024-09-07T21:30:10+12:00
 draft: false
-summary: "<<about two sentences please>>"
+summary: "A fun modern craft and music project"
 tags: ['3D Printing', 'Craft', 'Music', 'Ocarina']
 ---
 
@@ -10,7 +10,12 @@ Recently I have grown attached to the concept of playing a wooden flute... possi
 
 Thank you very much [Mikolas Zuza](https://www.printables.com/@MikolasZuza) for your [12-hole playable Ocarina](https://www.printables.com/model/65399-12-hole-playable-ocarina/comments/2038552) model on Printables.
 
-![My finished Ocarina](/post-images/ocarina/ocarina.jpg "My finished Ocarina")
+{{<figure
+    title="My Finished Ocarina"
+    src="/post-images/ocarina/ocarina.jpeg"
+    caption="A 12-hole Ocarina in the key of C. 3D printed from a model on Printables, and painted by hand."
+    align=center
+>}}
 
 Having access to an old 3D printer from work, I made this on an old Prusa Mk3 with some random PLA that came with it. Printed very nicely, although I'm not sure how it managed to print some parts of it without supports. The bottom will need some sanding. I did see a comment that it might be better to print it upside down; perhaps this is why. It has a very pleasing heft to it, printing it with the recommended 100% infill.
 
