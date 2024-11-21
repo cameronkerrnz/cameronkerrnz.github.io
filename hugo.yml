@@ -10,6 +10,8 @@ author:
 googleAnalytics: G-8V0JS24C90
 #disqusShortname: cameronkerrnz-blog
 
+disablePathToLower: true  # stops /CV... turning into /cv... and 404ing
+
 params:
   info: Linux SRE and Polyglot Programmer
   description: Understanding begets Resolution
