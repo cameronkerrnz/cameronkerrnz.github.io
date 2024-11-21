@@ -8,7 +8,7 @@ author:
   email: cameron.kerr.nz@gmail.com
 
 googleAnalytics: G-8V0JS24C90
-disqusShortname: cameronkerrnz-blog
+#disqusShortname: cameronkerrnz-blog
 
 params:
   info: Linux SRE and Polyglot Programmer
@@ -87,27 +87,34 @@ params:
 menu:
   main:
     - weight: 1
+      identifier: cv
+      pre: '<b>'
+      post: '</b>'
+      name: CV
+      url: '/CV%20-%20Cameron%20Kerr.pdf'
+      title: ''
+    - weight: 2
       identifier: posts
       pre: ''
       post: ''
       name: Posts
       url: /posts/
       title: ''
-    - weight: 2
+    - weight: 3
       identifier: archives
       pre: '<b>'
       post: '</b>'
       name: Archives
       url: /archives/
       title: ''
-    - weight: 3
+    - weight: 4
       identifier: tags
       pre: ''
       post: ''
       name: Tags
       url: /tags/
       title: ''
-    - weight: 4
+    - weight: 5
       identifier: search
       pre: ''
       post: ''
