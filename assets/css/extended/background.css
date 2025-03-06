@@ -1,0 +1,23 @@
+body.list {
+    background-image: url(/images/background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: gainsboro;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.post-entry {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.archive-posts {
+    position: relative;
+    margin-bottom: var(--gap);
+    padding: var(--gap);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius);
+    transition: transform .1s;
+    border: 1px solid var(--border);
+}

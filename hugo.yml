@@ -16,16 +16,16 @@ params:
   keywords: ["blog","developer","personal","linux","sre","programming"]
   avatarurl: images/cameron-kerr-nz-logo.png
   since: 2023
-  author:
-    name: Cameron Kerr
-    email: cameron.kerr.nz@gmail.com
+  author: Cameron Kerr
+  email: cameron.kerr.nz@gmail.com
 
   colorScheme: auto
   dateFormat: '2006-01-02'
 
-  ShowReadingTime: true
-  ShowShareButtons: false
-  ShowPostNavLinks: false
+  ShowReadingTime: false
+  ShowShareButtons: true
+  ShareButtons: ['linkedin', 'reddit', 'email']
+  ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowWordCount: false
@@ -62,7 +62,7 @@ params:
     #   - name: Tags
     #     url: tags
 
-  social:
+  socialIcons:
     - name: Github
       icon: fa fa-2x fa-github
       weight: 1
