@@ -2,10 +2,8 @@ baseURL: 'https://cameronkerrnz.github.io/'
 languageCode: en-us
 title: 'Cameron Kerr :: Blog'
 theme: PaperMod
-paginate: 20
-author:
-  name: Cameron Kerr
-  email: cameron.kerr.nz@gmail.com
+pagination:
+  pagerSize: 20
 
 googleAnalytics: G-8V0JS24C90
 #disqusShortname: cameronkerrnz-blog
@@ -18,6 +16,10 @@ params:
   keywords: ["blog","developer","personal","linux","sre","programming"]
   avatarurl: images/cameron-kerr-nz-logo.png
   since: 2023
+  author:
+    name: Cameron Kerr
+    email: cameron.kerr.nz@gmail.com
+
   colorScheme: auto
   dateFormat: '2006-01-02'
 
