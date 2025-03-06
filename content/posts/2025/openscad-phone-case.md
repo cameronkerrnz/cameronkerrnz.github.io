@@ -249,3 +249,7 @@ Some more experimental ideas:
 
 * Experiment using a technique such as Kalrosing to tattoo a design into the plastic. Use ModPodge or similar to seal it.
 * Remember in school when you made a picture by adding splotches of different colours in crayon, then covered the entire sheet with a thick layer of black, then etched your design into the black to expose the colour below? Yeah, try that, but with paint. Make sure the underlying colour has enough time to dry before adding the top (black) layer, then etch off using a suitably soft stylus, perhaps a skewer? Let dry, seal and cure.
+
+## Code
+
+<script src="https://gist.github.com/cameronkerrnz/c71dcdbfc1a3cbb4bdc45823d9dfbbc8.js"></script>
