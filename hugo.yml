@@ -56,7 +56,7 @@ params:
     imageUrl: "/images/cameron-kerr-nz-logo.png"
     imageWidth: 350
     imageHeight: 350
-    imageTitle: my image
+    imageTitle: My Personal Logo
     # buttons:
     #   - name: Posts
     #     url: posts

@@ -14,8 +14,8 @@ body.list, body.dark.list, body, body.dark {
     border-radius: var(--radius);
 }
 
-.main .profile image {
-    filter: drop-shadow(0 0 15px var(--theme)) sepia(20%);
+.main .profile img {
+    filter: drop-shadow(0 0 15px var(--theme)) sepia(30%);
 }
 
 .main .profile,
