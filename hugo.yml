@@ -47,6 +47,7 @@ params:
     favicon32x32: "/images/favicon-32x32.png"
     apple_touch_icon: "/images/apple-touch-icon.png"
     safari_pinned_tab: "/images/safari-pinned-tab.svg"
+    disableScrollBarStyle: true
 
   profileMode:
     enabled: true # needs to be explicitly set
