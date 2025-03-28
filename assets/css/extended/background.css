@@ -12,7 +12,6 @@ body.list, body.dark.list, body, body.dark {
     background: var(--theme);
     backdrop-filter: blur(20px);
     border-radius: var(--radius);
-    margin: 1rem;
 }
 
 .main .profile {
@@ -36,11 +35,17 @@ body.list, body.dark.list, body, body.dark {
 
 .archive-posts {
     position: relative;
-    margin-bottom: var(--gap);
     padding: var(--gap);
     background-color: var(--theme);
     border-radius: var(--radius);
-    transition: transform .1s;
     border: 1px solid var(--border);
+}
+
+.archive-month:not(:last-of-type) {
+    border-bottom: none;
+}
+
+.archive-year:not(:last-of-type) {
+    border-bottom: none;
 }
 
