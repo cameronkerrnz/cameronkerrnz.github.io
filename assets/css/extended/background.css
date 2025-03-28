@@ -8,11 +8,26 @@ body.list, body.dark.list, body, body.dark {
     background-position: center;
 }
 
-.main {
+.main:not(:has(.profile)) {
     background: var(--theme);
     backdrop-filter: blur(20px);
     border-radius: var(--radius);
     margin: 1rem;
+}
+
+.main .profile {
+    filter: drop-shadow(0 0 15px var(--theme)) sepia(50%);
+}
+
+.main .profile,
+.main .profile h1,
+.main .profile a,
+.footer {
+    color: var(--primary);
+}
+
+.footer a {
+    border-bottom: 1px solid var(--primary);
 }
 
 .post-entry {
