@@ -14,8 +14,8 @@ body.list, body.dark.list, body, body.dark {
     border-radius: var(--radius);
 }
 
-.main .profile {
-    filter: drop-shadow(0 0 15px var(--theme)) sepia(50%);
+.main .profile image {
+    filter: drop-shadow(0 0 15px var(--theme)) sepia(20%);
 }
 
 .main .profile,
@@ -26,7 +26,20 @@ body.list, body.dark.list, body, body.dark {
 }
 
 .footer a {
+    color: var(--primary);
     border-bottom: 1px solid var(--primary);
+}
+
+.dark .main .profile,
+.dark .main .profile h1,
+.dark .main .profile a,
+.dark .footer {
+    color: var(--light-primary);
+}
+
+.dark .footer a {
+    color: var(--light-primary);
+    border-bottom: 1px solid var(--light-primary);
 }
 
 .post-entry {
