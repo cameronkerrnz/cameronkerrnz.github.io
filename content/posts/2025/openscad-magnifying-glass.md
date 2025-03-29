@@ -119,3 +119,6 @@ Once assembled, and the glue was dried, I realised an issue: I should have measu
 
 Mum was delighted though, so job done.
 
+## Code
+
+<script src="https://gist.github.com/cameronkerrnz/3672e35a545c25e3c5feffe2b82f5d70.js"></script>
