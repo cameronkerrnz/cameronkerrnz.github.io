@@ -1,7 +1,6 @@
 ---
 title: "Where Did That Sqlalchemy SQL Originate?"
 date: 2025-04-19T11:34:45+12:00
-draft: true
 summary: "ORMs such as SQLAlchemy are very useful, but can easily generate very inefficient unrecognisable code. Here's an easy way to log where the query originates in your code."
 tags: ['Database', 'SQL', 'SQLAlchemy', 'Python', 'PostgreSQL', 'Programming', 'Software Development', 'SRE', 'logging']
 ---
