@@ -12,7 +12,9 @@ externalLink = ""
 series = []
 +++
 
-> This post was previously drafted for the [Pythian blog](https://blog.pythian.com/).
+> This post was previously drafted for the [Pythian blog](https://blog.pythian.com/), and more recently presented as a lightning talk.
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ4rhDQ7ASmNM_z1XadYKlY8fPB_5uqa7Gvl9szcEBBuuZ464kJUDsw-IrreEOSVWsudPdKSGg8DzLz/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="440" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 As a Site Reliability Engineer, one of the kinds of problems I’m often trying to solve is how to gain essential insights into the operational health of a service. Commonly we might do this using a metrics solution such as Prometheus. When using such metrics, it’s important to consider the ‘cardinality’ of your metrics; in this post I’m going to show you how I used the Common Expression Language (CEL) within a custom exporter to allow the user to recognise different types of workloads, so we can see performance of small workloads against large workloads.
 
