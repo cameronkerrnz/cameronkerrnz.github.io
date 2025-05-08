@@ -48,7 +48,7 @@ Before I go on, let’s revisit what actually happened so we can how this impact
 
 ## Visibility _and_ Architecture
 
-With appropriate visibility we can see problems appearing, or reason about problems. But with good architecture we can help to prevent them, and in this case there is a direct analogue with a database architecture. After all, an LDAP service is essentially a specialised kind a client-server database system.
+With appropriate visibility we can see problems appearing, or reason about problems. But with good architecture we can help to prevent them, and in this case there is a direct analogue with a database architecture. After all, an LDAP service is a specialised client-server database system.
 
 With databases we talk of On-Line Transaction Processing (OLTP) and On-Line Analytics Processing (OLAP); which are respectively the Small and Large workloads presented earlier. OLTP is to be kept nice and fast; OLAP is where you may perform your big, slow analytics queries. OLAP workloads often use a replica database so they don’t interfere with OLTP workloads.
 
@@ -58,7 +58,7 @@ A similar pattern could be used with LDAP too; have some LDAP cluster members be
 
 We first need to consider how to obtain the data we’ll use to formulate the metrics. The [documentation for RHDS 11 (and earlier) describes the ‘connection’ attribute in the ‘cn=monitoring’ object](https://access.redhat.com/documentation/en-us/red_hat_directory_server/11/html/configuration_command_and_file_reference/core_server_configuration_reference#cnmonitor). However the version for [RHDS 12 seems to have a different format compared to earlier versions](https://access.redhat.com/documentation/en-us/red_hat_directory_server/12/html/configuration_and_schema_reference/assembly_cn-monitor_config-schema-reference-title#ref_connection_assembly_cn-monitor), but they show essentially the same information. I’m showing the older format.
 
-There are considerations for obtaining this data, similar to polling a large SNMP table: the LDAP service will need to lock some data briefly to present consistent information, and the ‘connection’ attribute is multi-valued; you’ll get one value for each connection currently in the system. That said, I’ve found that it will return the data very quickly (<<1s) even on a busy server.
+There are considerations for obtaining this data, similar to polling a large SNMP table: the LDAP service may need to lock some data briefly to present consistent information, and the ‘connection’ attribute is multi-valued; you’ll get one value for each connection currently in the system. That said, I’ve found that it will return the data very quickly (<<1s) even on a busy server.
 
 The documentation does also state that (because of the potential for service disruption if polled too frequently) that it is only provided if you bind to the service as the directory manager. I’ve yet to investigate if an ACI can be used to mitigate this.
 
@@ -103,9 +103,9 @@ Within each ‘connection’ there are four fields that are useful:
 - the timestamp when the connection entered the system (I’ll refer to it as ConnectionTime)
 - the number of requests that have been made over the connection (OperationsReceivedCounter)
 - the Bind DN (BindDN)
-- the number of time a request has been blocked (had to wait) to get processed (OperationsDelayedCounter)
+- the amount of time a request has been blocked (had to wait) to get processed (OperationsDelayedCounter)
 
-We can estimate service saturation by looking at the ratio of OperationsDelayedCounter to OperationsReceivedCounter. If nothing had to wait, the ratio would be very low; if the service was saturated, the ratio will be >>1. As an example, OperationsReceivedCounter might be 100, but OperationsDelayedCounter might be 400, meaning it took on average 4 times for requests on this connection to get worked on.
+**We can estimate service saturation by looking at the ratio of OperationsDelayedCounter to OperationsReceivedCounter. If nothing had to wait, the ratio would be very low; if the service was saturated, the ratio will be >>1**. As an example, OperationsReceivedCounter might be 100, but OperationsDelayedCounter might be 400, meaning it took on average 4 times for requests on this connection to get worked on.
 
 I would like to see this information as a histogram, so each bucket is for a given ratio. But I’d like to see this broken down by the workload type eg. small-short, small-long and large-long (large).
 
@@ -120,33 +120,31 @@ Imagine for a moment that it went the other way; that performance was getting wo
 
 ## Classifying the Workloads: CEL-Go
 
-The greatest predictor of something that is a large-long (given the information available in the ‘connection’ metrics) is the BindDN. This assumes you’re giving your different services their own service accounts to use to query your LDAP service. Not all services would be
+The greatest predictor of something that is a large (given the information available in the ‘connection’ metrics) is the BindDN. This assumes you’re assigning service-specific accounts to use to query your LDAP service.
 
 Small-long workloads are recognisable by the age of their connection.
-
-You could perhaps recognise large-short workloads by the lower age of their connection and the number of operations made on the connection. I haven’t explored that, but you could easily do so.
 
 That leaves everything else as small-short… although there is always room for something that is known but ‘weird’… the ‘NULLDN’ Bind DN is an example of this… maybe related to monitoring or cluster operations.
 
 So, the crux of this post is as follows:
 
-**How can I create a suitably expressive way for the user (admin) to create expressions that can be used in a policy?**
+**How can I create a suitably expressive way for the user (LDAP server admin) to create expressions that can be used in a policy?**
 
-I tried exploring this in different YAML schemas… but YAML by itself is not expressive enough; it would introduce too much coupling between the user and the developer. In other words it’s not flexible enough and the YAML schema and implementation would need to evolve too much and get too complex.
+I tried exploring this in different YAML schemas… but YAML (or JSON) by itself is not expressive enough; it would introduce too much coupling between the monitoring-user and the monitoring-tool-developer. In other words it’s not flexible enough and the YAML schema and implementation would need to evolve too much and get too complex, particularly if you were to share the tool with other parties.
 
-In the past, I’ve used embedded languages such as Javascript and Lua to implement custom business logic. That would certainly work here too, and would be even more customisable (eg. have it consult some other service). But that is rather more heavy-weight than we want here. It also needs to have complex sandboxing, and incurs more of a performance concern when run in the core data-path.
+In the past, I’ve used embedded languages such as Javascript and Lua to implement custom business logic. That would certainly work here too, and would be even more customisable (eg. have it consult some other service). But that is rather more heavy-weight than we need here. Such embedded languages often require runtime support and sandboxing, and incurs a performance cost that would be of concern if run in the core data-path.
 
-Enter the Common Expression Language (CEL), brought to us by Google. It’s not a complete language (not ‘Turing Complete’). Tt’s expressly designed to run in nanoseconds to microseconds, and there are implementations for multiple languages. CEL programs are additionally type-checked! CEL can be found in a number of places today:
+Enter the Common Expression Language (CEL), brought to us by Google. It’s not a complete language (not ‘Turing Complete’). It’s expressly designed to run in **nanoseconds to microseconds**, and there are implementations for multiple languages. CEL programs can also be type-checked! CEL can be found in a number of places today:
 
 - [Kubernetes API uses CEL](https://kubernetes.io/docs/reference/using-api/cel/) to declare validation rules, policy rules, and other constraints or conditions.
 - Google Cloud Certificate Authority Service, Envoy, the Open Policy Agent and more
 - CEL is a great tool for allowing an API (or human) user to specify filter conditions (eg. when requesting a set of API resources)
 
-I liken CEL to be similar to (but a bit heavier than) a regular expression. You often use a regular expression in your data-path; it has a performance cost that you don’t tend to worry about too much, so long as you preprepare them. CEL programs, like regular expressions, really should be compiled and checked once, such as when you start your program, and then run many times (such as for every request).
+I liken CEL to be similar to a regular expression. You often use a regular expression in your data-path; it has a performance cost that you don’t tend to worry about too much, so long as you preprepare them. CEL programs, like regular expressions, really should be compiled and checked once, such as when you start your program, and then run many times (such as for every request). You can even persist the compiled code.
 
 I didn’t know CEL previously, but I learned CEL for Go using the [CEL-Go Codelab](https://codelabs.developers.google.com/codelabs/cel-go/index.html#0). It’s free. I should mention too that it’s been a while since I used Go, so I was relearning that at the same time. It was a fun few days.
 
-CEL has implementations for a few languages: Go, C++ and Java would be the best supported, because they are developed and used by Google. Other implementations exist for Python, Rust, Ruby and more, in varying stages of completeness. Tip: if you want to search for your favourite language, try searching for ‘TypeScript common expression language “cel”‘ (substitute TypeScirpt for the language in question). Searching for just ‘TypeScript “cel”‘ is not the happy path.
+CEL has implementations for a few languages: Go, C++ and Java would be the best supported, because they are developed and used by Google. Other implementations exist for Python, Rust, Ruby and more, in varying stages of completeness. Tip: if you want to search for your favourite language, try searching for ‘TypeScript common expression language “cel”‘ (substitute TypeScript for the language in question). Searching for just ‘TypeScript “cel”‘ is not the happy path.
 
 ## Code Highlights
 
