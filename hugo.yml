@@ -1,19 +1,14 @@
 baseURL: 'https://cameronkerrnz.github.io/'
-languageCode: en-us
+locale: en-us
 title: 'Cameron Kerr :: Blog'
 theme: PaperMod
 pagination:
   pagerSize: 20
 
-googleAnalytics: G-8V0JS24C90
-#disqusShortname: cameronkerrnz-blog
-
 disablePathToLower: true  # stops /CV... turning into /cv... and 404ing
 
 params:
-  info: Linux SRE and Polyglot Programmer
-  description: Understanding begets Resolution
-  keywords: ["blog","developer","personal","linux","sre","programming"]
+  keywords: ["blog","developer","personal","linux","sre","programming","diy","craft","woodwork"]
   avatarurl: images/cameron-kerr-nz-logo.png
   since: 2023
   author: Cameron Kerr
@@ -52,7 +47,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: 'Cameron Kerr'
-    subtitle: "Linux SRE and Polyglot Programmer"
+    subtitle: "Cloud, Code, Craft and Cunning"
     imageUrl: "/images/cameron-kerr-nz-logo.png"
     imageWidth: 350
     imageHeight: 350
